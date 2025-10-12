@@ -1,0 +1,9 @@
+September 8, 2014 · Rosu · Edited
+
+Subiectele de azi PA
+
+Algoritmi : dfs ( timpi si muchii) , bfs , prim , kosaraju , A*
+Teorie : 1.cale reziduala , capacitate reziduala ( cum se obține , ce este , utilitate ) ,
+2.ce fel de muchii poate avea un graf neorientat ( demonstratie )
+3. Algoritm tentativ (ce este, cum se diferențiaza de ceilalți , cum se pot clasifica , in funcție de ce )
+4. Un MiniMax enorm care era aproape imposibil de deslusit pt ca noua lor revelatie a fost sa pună subiectul pe video proiector

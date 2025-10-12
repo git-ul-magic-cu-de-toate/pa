@@ -1,0 +1,40 @@
+Input: sirul cu n elemente v[1..n]
+
+- back - complexitate exponentiala - 3p
+- dp - O(n^2) 6p
+- greedy - O(n) sau O(n logn 9p)
+
+ Back: timp exponential; spatiu liniar (recursivitate)
+1) Se poate scrie in toate modurile posibile lungime n 
+ca suma n = x1 + x2 + ... + xk.
+ Cele k subsecvente generate au lungimile x1, ..., xk.
+ Dintre cele valide, se alege solutia cu k maxim.
+ 
+2)O idee asemantoare cu 1, in care se genereaza subsecventele
+fara sa se stabileasca lungimile lor inainte.
+	Orice alta solutie CORECTA cu back se puncteaza cu 3p.
+ 
+ DP: O(n ^ 2) timp, O(n) spatiu (tabloul dp)
+ dp[i] = numarul maxim de subsecvente in care se poate
+ imparti sirul v[1..i]
+ 
+ dp[1] = 0
+ dp[i] = max (dp[j - 1] + 1)
+		 j = 1: i-1 si v[j + 1, ..., i] respecta proprietatea 
+		 
+ Greedy:
+	Se observa ca fiecare element trebuie sa faca parte dintr-observa
+secventa. Deci primul element(v[1]) sigur face parte dintr-observa
+subsecventa care incepe pe pozitia 1.
+	Intuitiv extindem aceasta subsecventa spre dreapta.
+Cat timp? Pai daca avem cel putin un element care nu are
+frecventa PARA, atunci sigur mai trebuie sa mai extindem,
+intrucat nu se verifica proprietatea.
+	In momentul in care prima subsecventa respecta proprietatea,
+o terminam si incepem alta.
+	Daca pentru inputul dat exista solutie, atunci aceasta
+abordarea va gasi numarul maxim de subsecvente, intrucat
+ele au fost generate a.i. sa fie cat se poate de scurte.
+	Acest greedy este corect.
+	Timp: O(n) cu hash / O(n logn cu set)
+	Spatiu: O(n) (hash/set auxiliar)
