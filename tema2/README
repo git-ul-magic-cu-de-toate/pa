@@ -1,0 +1,66 @@
+Tema 2
+
+Problema 1: supercomputer
+
+Pentru aceasta problema am considerat 2 cazuri: fie incep cu un task de tip 1,
+fie cu un task de tip 2.
+
+Problema se rezolva similar in ambele cazuri, asa ca presupunem ca incepem cu 
+un task de tip 1.
+
+Incepem prin a rezolva toate taskurile de tip 1, iar daca prin rezolvarea lor
+putem rezolva alte taskuri de tip 1, le rezolvam si pe acestea, si tot asa, 
+pana cand nu mai putem rezolva niciun task de tip 1 si incepem sa rezolvam 
+taskuri de tip 2, pentru care procedam similar. Algoritmul este foarte similar 
+cu o sortare topologica in care folosim 2 cozi, una pentru taskurile de tip 1,
+alta pentru taskurile de tip 2, trecerea de la o coada la alta reprezentand un 
+switch.
+
+Complexitate timp: O(N + M), N - numarul de noduri, M numarul de muchii.
+Complexitate spatiu: O(N + M), N - numarul de noduri, M numarul de muchii.
+
+
+Problema 2: cai ferate
+
+Pentru aceasta problema am aplicat Algoritmul lui Tarjan pentru determinarea
+componentelor tare conexe, deoarece asa reducem graful la unul mai mic,
+deoarece daca pot ajunge la un nod dintr-o componenta tare conexa, pot ajunge 
+la toate nodurile din componenta. Acum orice tare conexa cu grad de intrare
+mai mare sau egal decat 1 nu ne intereseaza in mod particular, deoarece daca
+putem ajunge la componenta care are muchie spre ea, putem ajunge si la ea.
+Asa ca ne intereseaza doar componentele cu grad de intrare 0.
+Raspunsul este egal cu numarul componentelor din care scadem 1 daca intr-o
+componenta cu grad de intrare 0 se afla nodul s.
+
+Complexitate timp: O(N + M), N - numarul de noduri, M numarul de muchii.
+Complexitate spatiu: O(N + M), N - numarul de noduri, M numarul de muchii.
+
+Problema 3: teleportare
+
+Problema s-ar rezolva usor daca am putea aplica Algoritmul lui Dijkstra, dar
+nu putem aplica Algoritmul lui Dijkstra pe graful din problema din cauza
+muchiilor care se 'activeaza' la o anumita perioada de timp.
+
+Pentru a putea aplica Algoritmul lui Dijkstra calculam cel mai mare multiplu
+comun al tuturor perioadelor la care se activeaza tunelurile. Notam acest numar 
+cu MOD.
+
+Pentru fiecare nod cream MOD noduri, al i-lea astfel de nod pentru un nod 
+reprezinta nodul la toate momentele de timp T, pentru care T = i (mod MOD).
+
+Aplicam Algoritmul lui Dijkstra pe acest graf, si afisam minimul pentru oricare
+dintre clonele nodului n.
+
+Complexitate timp: O(N * MOD + M), N - numarul de noduri, M numarul de muchii.
+Complexitate spatiu: O(N * MOD + M), N - numarul de noduri, M numarul de muchii.
+
+Problema 4: magazin
+
+Facem o parcurgere dfs si calculam pentru fiecare nod timpii de descoperire
+in arborele dfs. Al k-lea nod din subarborele unui anumit nod o sa aiba
+timpul de descoperire k + timpul de descoperire al nodului. De sigur,
+trebuie tratat cazul cand sunt mai putini de k noduri in subarbore,
+ceea ce este simplu de verificat.
+
+Complexitate timp: O(N), N - numarul de noduri.
+Complexitate spatiu: O(N), N - numarul de noduri.
