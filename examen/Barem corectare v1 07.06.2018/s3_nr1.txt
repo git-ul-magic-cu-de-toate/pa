@@ -1,0 +1,17 @@
+Orice tip de backtracking - 3p
+Programare dinamica in O(N ^ 2) - 6p
+Greedy in O(N) - 9p
+
+Programare dinamica:
+dp[i] = nr minim de subsecvente in care putem sa impartim [1...i]
+dp[i] = 1 + min(dp[j], j pt care [j + 1...i] e o subsecventa valida)
+Rezultatul se afla in dp[n]
+
+Greedy:
+Se observa ca subsecventa care incepe pe o pozitie i trebuie sa se termine
+cat mai la dreapta posibil.
+Putem sa plecam de la pozitia 1 si sa vedem care e pozitia maxima p pt care
+max([1..p]) - min([1..p]) <= k, adaugam subsecventa [1..p] la solutie si
+repetam procesul de la pozitia p + 1
+
+

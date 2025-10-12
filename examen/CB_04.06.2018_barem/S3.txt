@@ -1,0 +1,32 @@
+Input: graf neorientat conex cu n noduri si m muchii
+
+- back            - timp exponential    - 3p
+- cautare liniara - O(C * (n + m))		- 6p
+- cautare binara  - O((n + m) * log C)	- 9p
+- Kruskal         - O(m log m)			- 9p
+
+	Back
+	Orice solutie CORECTA bazata pe backtracking
+care genereaza toate drumurile de la x la y si alege
+drumul cu costul cel mai mic.
+
+	Cautare liniara
+	Se fixeaza un cost C si se face o parcurgere din x,
+mergandu-se doar pe muchii cu cost <= C.
+	C se variaza intre 1 si CMAX (costul maxim al unei muchii).
+	
+	Cautare binara
+	In solutia anterioara observam ca daca am gasit solutie pentru
+un C, automat exista solutie si pentru un C mai mare.
+	Putem cauta binar pe C in aceeasi multime.
+	
+	Kruskal
+	Se porneste algoritmul de APM cu paduri de multimi disjuncte
+si se opreste in momentul in care nodurile x si y sunt bagate
+in aceeasi multime (arbore).
+	In acest moment suntem siguri ca x si y sunt unite printr-un
+drum care contine cele mai mici valori posibile (muchiile la Kruskal
+sunt sortate crescator dupa cost).
+	Mai facem o parcurgere DFS/BFS pentru a traversa drumul
+efectiv de la x la y si a gasi muchia de cost maxim.
+	

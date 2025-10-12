@@ -1,0 +1,17 @@
+Orice tip de backtracking - 4p
+Programare dinamica O(n^3) - 7p
+Programare dinamica O(n^2) - 9p
+
+
+Programare dinamica:
+dp[i][j] = numarul de moduri in care putem distribui i bile in j cutii
+
+dp[i][j] = dp[0][j-1] + dp[1][j-1] +...+ dp[i][j-1] 
+Alegem toate nr de bile posibile pentru prima cutie.
+
+Se poate observa ca suma primilor i termeni este egala cu dp[i-1][j].
+Recurenta restransa devine: 
+dp[i][j] = dp[i-1][j] + dp[i][j-1]
+
+Raspunsul e in dp[N][K]
+
